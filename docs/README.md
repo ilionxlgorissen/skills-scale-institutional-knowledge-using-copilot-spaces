@@ -6,7 +6,7 @@ Welcome! This space centralizes and democratizes all of OctoAcme's project manag
 
 OctoAcme follows a structured, iterative project lifecycle that moves from **Initiation** through **Planning**, **Execution**, **Release**, and closes with a **Retrospective**. Each phase is supported by explicit ownership, defined artifacts (charters, backlogs, risk registers), and lightweight governance so teams can move quickly without sacrificing alignment. The goal is to deliver customer value in small, testable increments while keeping stakeholders informed at every turn.
 
-The key **personas and roles** that drive this lifecycle are the Project Manager (PM), Product Manager (PdM), Developers, QA/Testing, and Stakeholders. Each role carries clear responsibilities: the PM coordinates delivery and risk; the PdM owns outcomes and prioritization; developers and QA collaborate on quality; and stakeholders provide inputs and approvals. Role clarity reduces ambiguity and ensures that decisions are made at the right level.
+The key **personas and roles** that drive this lifecycle are the Project Manager (PM), Product Manager (PdM), Developers, QA/Testing, Scrum Master, Business Analyst, UX/UI Designer, Release Manager, Support Lead, and Stakeholders. Each role carries clear responsibilities: the PM coordinates delivery and risk; the PdM owns outcomes and prioritization; developers and QA collaborate on quality; the Scrum Master facilitates agile ceremonies and removes impediments; the Business Analyst translates business needs into actionable requirements; the UX/UI Designer ensures usability and accessibility; the Release Manager owns the deployment process; and the Support Lead manages post-release support. Role clarity reduces ambiguity and ensures that decisions are made at the right level.
 
 **Communication strategies** are built around a predictable cadence—weekly PM–PdM syncs, twice-weekly delivery standups, and monthly stakeholder updates—supplemented by ad-hoc escalation paths when blockers or risks emerge. Risk and issue tracking is explicit: every known risk is logged, owned, and reviewed regularly so teams surface problems early rather than absorbing them silently.
 
@@ -26,6 +26,11 @@ The key **personas and roles** that drive this lifecycle are the Project Manager
 | [Release & Deployment](octoacme-release-and-deployment.md) | Deploy, verify, and announce procedures |
 | [Retrospective & Continuous Improvement](octoacme-retrospective-and-continuous-improvement.md) | Capturing learnings and driving process improvements |
 | [Roles & Personas](octoacme-roles-and-personas.md) | Detailed role definitions and responsibilities |
+| **Templates & Checklists** | |
+| [Risk Register Template](octoacme-risk-register-template.md) | Reusable risk tracking table with field definitions and score matrix |
+| [Decision Log Template](octoacme-decision-log-template.md) | Record significant project decisions with context and rationale |
+| [Release Readiness Checklist](octoacme-release-readiness-checklist.md) | Pre-release gate checklist with go/no-go decision record |
+| [Project Status Update Template](octoacme-project-status-update-template.md) | Weekly/milestone status report for stakeholders |
 
 ---
 

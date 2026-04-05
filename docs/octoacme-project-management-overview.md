@@ -18,14 +18,23 @@ Applies to all cross-functional projects that deliver product features, services
 - Product Manager (PdM): defines outcomes, prioritizes backlog, and measures success.
 - Developers: implement features, collaborate on design and testability.
 - QA/Testing: validate quality and acceptance criteria.
+- Scrum Master: facilitates agile ceremonies and removes team impediments.
+- Business Analyst: translates business needs into actionable requirements and acceptance criteria.
+- UX/UI Designer: creates user-centred designs and ensures usability and accessibility.
+- Release Manager: owns the deployment process and go/no-go decisions.
+- Support Lead: manages post-release support and feeds insights back to the team.
 - Stakeholders: provide inputs and approvals.
+
+See [Roles & Personas](octoacme-roles-and-personas.md) for detailed responsibilities and interaction points.
 
 ## Key Artifacts
 - Project Charter / One-pager
 - Roadmap and Release Plan
 - Sprint/Iteration Backlog
-- Acceptance Criteria & Definition of Done
-- Risk Register
+- Acceptance Criteria & Definition of Done (DoD)
+- [Risk Register](octoacme-risk-register-template.md)
+- [Decision Log](octoacme-decision-log-template.md)
+- [Project Status Update](octoacme-project-status-update-template.md)
 - Retrospective notes and action items
 
 ## Lifecycle (high-level)
