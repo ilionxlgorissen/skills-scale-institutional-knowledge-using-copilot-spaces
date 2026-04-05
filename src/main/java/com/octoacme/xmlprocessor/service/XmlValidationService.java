@@ -34,16 +34,7 @@ public class XmlValidationService {
             return false;
         }
         try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-
-            // Disable external entity processing to prevent XXE
-            factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
-            factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
-            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-
-            factory.newDocumentBuilder()
-                   .parse(new ByteArrayInputStream(xmlPayload.getBytes(StandardCharsets.UTF_8)));
+            parse(xmlPayload);
             return true;
         } catch (SAXException e) {
             log.debug("XML payload is not well-formed: {}", e.getMessage());
@@ -65,19 +56,30 @@ public class XmlValidationService {
             return "XML payload is null or blank";
         }
         try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-            factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
-            factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
-            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-
-            factory.newDocumentBuilder()
-                   .parse(new ByteArrayInputStream(xmlPayload.getBytes(StandardCharsets.UTF_8)));
+            parse(xmlPayload);
             return null;
         } catch (SAXException e) {
             return e.getMessage();
         } catch (ParserConfigurationException | IOException e) {
             return "Internal parser error: " + e.getMessage();
         }
+    }
+
+    /**
+     * Parses {@code xmlPayload} using an XXE-safe {@link DocumentBuilderFactory}.
+     *
+     * @throws SAXException              when the payload is not well-formed XML
+     * @throws ParserConfigurationException when the parser cannot be configured
+     * @throws IOException               on I/O errors
+     */
+    private void parse(String xmlPayload) throws SAXException, ParserConfigurationException, IOException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        // Disable external entity processing to prevent XXE attacks
+        factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        factory.newDocumentBuilder()
+               .parse(new ByteArrayInputStream(xmlPayload.getBytes(StandardCharsets.UTF_8)));
     }
 }
